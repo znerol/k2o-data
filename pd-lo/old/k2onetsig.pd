@@ -1,0 +1,18 @@
+#N canvas 53 342 501 330 10;
+#X obj 68 51 inlet;
+#X obj 350 146 k2onetdist;
+#X obj 68 235 outlet;
+#X obj 68 91 OSCroute /channel /signal /quality /noise;
+#X obj 69 205 pack f f f f f;
+#X text 64 16 outputs a list of channel \, signal \, quality \, noise
+and distance of a network;
+#X obj 350 124 k2onetrel;
+#X connect 0 0 3 0;
+#X connect 1 0 4 4;
+#X connect 3 0 4 0;
+#X connect 3 1 4 1;
+#X connect 3 2 4 2;
+#X connect 3 3 4 3;
+#X connect 3 4 6 0;
+#X connect 4 0 2 0;
+#X connect 6 0 1 0;

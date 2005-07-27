@@ -1,0 +1,18 @@
+#N canvas 149 48 491 293 10;
+#X obj 248 150 s2l /;
+#X msg 248 170 \$1;
+#X obj 248 130 symbol;
+#X obj 248 190 outlet;
+#X obj 218 70 inlet;
+#X text 49 29 OSChead devides the first path component from the rest
+of the OSC message;
+#X obj 218 220 OSCroute /*;
+#X obj 218 100 t a a;
+#X obj 218 240 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X connect 4 0 7 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 7 1 2 0;

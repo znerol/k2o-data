@@ -1,0 +1,29 @@
+channel-sine.pd:
+simple
+generates a sinewave out of the channel data.
+
+
+k2o.pd
+master patch for receiving and dispatching k2oplay messages and controlling k2oplay remotely
+
+
+OSChead.pd
+helper patch for separating the last path component and osc parameters from the rest of the path e.g.
+
+   /kismet/card/channel i 4
+              |
+          [OSChead]
+          |       |
+/kismet/card    /channel i 4
+
+
+polynet-master.pd
+master patch for representing an arbitary number of networks aucustic and visual. this patch creates polynet objects dynamically.
+
+
+polynet.pd
+belongs to polynet-master.pd
+
+
+viewpoint.pd
+just displays gps data

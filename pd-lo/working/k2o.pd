@@ -1,0 +1,52 @@
+#N canvas 521 474 460 245 10;
+#X obj 15 303 dumpOSC 12345;
+#X obj 15 330 OSCroute /kismet;
+#X obj 170 160 sendOSC;
+#X floatatom 170 187 5 0 0 0 - - -;
+#X floatatom 215 187 5 0 0 0 - - -;
+#X floatatom 193 119 5 -10 10 0 - - -;
+#X obj 310 80 hsl 128 15 -10 10 0 0 empty empty rate -2 -6 0 8 -262144
+-1 -1 0 1;
+#X msg 11 98 disconnect;
+#X msg 272 115 1;
+#X msg 235 116 0;
+#X obj 271 82 bng 15 250 50 0 empty empty play 0 -6 0 8 -262144 -1
+-1;
+#X obj 236 80 bng 15 250 50 0 empty empty pause 0 -6 0 8 -262144 -1
+-1;
+#X obj 16 356 OSCroute /network /client /gps /info /card /packet;
+#X obj 16 391 s net;
+#X obj 73 388 s cli;
+#X obj 131 387 s gps;
+#X obj 187 387 s info;
+#X obj 249 387 s card;
+#X obj 304 388 s packet;
+#X text 13 8 remote control point ip address and port to the machine
+running k2oplay and connect.;
+#X text 11 266 receive k2o-osc messages and route them internally;
+#X msg 192 138 send /k2o/setrate \$1;
+#X obj 362 208 s reset;
+#X obj 360 176 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 12 78 connect 127.0.0.1 54321;
+#X obj 41 169 zexy;
+#X connect 0 0 1 0;
+#X connect 1 0 12 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 5 0 21 0;
+#X connect 6 0 5 0;
+#X connect 7 0 2 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 10 0 8 0;
+#X connect 11 0 9 0;
+#X connect 12 0 13 0;
+#X connect 12 1 14 0;
+#X connect 12 2 15 0;
+#X connect 12 3 16 0;
+#X connect 12 4 17 0;
+#X connect 12 5 18 0;
+#X connect 21 0 2 0;
+#X connect 23 0 22 0;
+#X connect 24 0 2 0;
