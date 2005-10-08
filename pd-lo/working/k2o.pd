@@ -1,4 +1,4 @@
-#N canvas 521 474 460 245 10;
+#N canvas 521 474 464 249 10;
 #X obj 15 303 dumpOSC 12345;
 #X obj 15 330 OSCroute /kismet;
 #X obj 170 160 sendOSC;
@@ -29,7 +29,6 @@ running k2oplay and connect.;
 #X obj 360 176 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
 #X msg 12 78 connect 127.0.0.1 54321;
-#X obj 41 169 zexy;
 #X connect 0 0 1 0;
 #X connect 1 0 12 0;
 #X connect 2 0 3 0;

@@ -1,0 +1,56 @@
+#N canvas 430 51 582 633 10;
+#X obj 27 91 inlet;
+#X text 27 70 index;
+#X obj 195 290 pointer;
+#X msg 109 359 next;
+#X obj 115 396 pointer;
+#X obj 90 510 pointer;
+#X obj 109 315 t b f;
+#X obj 178 428 i;
+#X text 228 362 create new object;
+#X obj 87 241 t b f b;
+#X obj 204 230 symbol \$1;
+#X msg 204 255 traverse \$1 \, bang;
+#X obj 204 205 loadbang;
+#X obj 174 454 append \$2 \$3;
+#X obj 27 117 route bang float;
+#X obj 135 141 print not recognized;
+#X obj 89 543 outlet;
+#X text 28 -18 gets the template object at the give position of the
+painting area. if object des not exists it will be created including
+all the objects before arguments: 1: painting area (with "pd-") 2:
+template definition 3: argname for index argument;
+#X obj 189 174 inlet;
+#X obj 173 262 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 203 541 outlet;
+#X text 201 556 created pointers;
+#X text 86 559 fetched ptr;
+#X obj 173 478 t p p p;
+#X obj 110 275 ramp 0;
+#X connect 0 0 14 0;
+#X connect 2 0 4 1;
+#X connect 2 0 13 1;
+#X connect 3 0 4 0;
+#X connect 4 0 5 1;
+#X connect 4 1 7 0;
+#X connect 5 0 16 0;
+#X connect 6 0 3 0;
+#X connect 6 1 7 1;
+#X connect 7 0 13 0;
+#X connect 9 0 5 0;
+#X connect 9 1 24 0;
+#X connect 9 2 19 0;
+#X connect 10 0 11 0;
+#X connect 11 0 2 0;
+#X connect 12 0 10 0;
+#X connect 13 0 23 0;
+#X connect 14 0 5 0;
+#X connect 14 1 9 0;
+#X connect 14 2 15 0;
+#X connect 18 0 2 0;
+#X connect 19 0 2 0;
+#X connect 23 0 5 1;
+#X connect 23 1 20 0;
+#X connect 23 2 4 1;
+#X connect 24 0 6 0;

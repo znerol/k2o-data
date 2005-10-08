@@ -1,4 +1,4 @@
-#N canvas 149 48 491 293 10;
+#N canvas 149 48 495 297 10;
 #X obj 248 150 s2l /;
 #X msg 248 170 \$1;
 #X obj 248 130 symbol;
