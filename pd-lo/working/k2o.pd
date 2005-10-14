@@ -1,4 +1,4 @@
-#N canvas 521 474 464 249 10;
+#N canvas 314 386 546 237 10;
 #X obj 15 303 dumpOSC 12345;
 #X obj 15 330 OSCroute /kismet;
 #X obj 170 160 sendOSC;
@@ -14,7 +14,6 @@
 -1;
 #X obj 236 80 bng 15 250 50 0 empty empty pause 0 -6 0 8 -262144 -1
 -1;
-#X obj 16 356 OSCroute /network /client /gps /info /card /packet;
 #X obj 16 391 s net;
 #X obj 73 388 s cli;
 #X obj 131 387 s gps;
@@ -25,27 +24,32 @@
 running k2oplay and connect.;
 #X text 11 266 receive k2o-osc messages and route them internally;
 #X msg 192 138 send /k2o/setrate \$1;
-#X obj 362 208 s reset;
-#X obj 360 176 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
 #X msg 12 78 connect 127.0.0.1 54321;
+#X obj 16 356 OSCroute /network /client /gps /info /card /packet /time
+;
+#X obj 371 388 OSCroute /timesec;
+#X obj 371 418 s timesec;
+#X obj 451 80 r timesec;
+#X floatatom 450 102 5 0 0 0 - - -;
 #X connect 0 0 1 0;
-#X connect 1 0 12 0;
+#X connect 1 0 22 0;
 #X connect 2 0 3 0;
 #X connect 2 1 4 0;
-#X connect 5 0 21 0;
+#X connect 5 0 20 0;
 #X connect 6 0 5 0;
 #X connect 7 0 2 0;
 #X connect 8 0 6 0;
 #X connect 9 0 6 0;
 #X connect 10 0 8 0;
 #X connect 11 0 9 0;
-#X connect 12 0 13 0;
-#X connect 12 1 14 0;
-#X connect 12 2 15 0;
-#X connect 12 3 16 0;
-#X connect 12 4 17 0;
-#X connect 12 5 18 0;
+#X connect 20 0 2 0;
 #X connect 21 0 2 0;
-#X connect 23 0 22 0;
-#X connect 24 0 2 0;
+#X connect 22 0 12 0;
+#X connect 22 1 13 0;
+#X connect 22 2 14 0;
+#X connect 22 3 15 0;
+#X connect 22 4 16 0;
+#X connect 22 5 17 0;
+#X connect 22 6 23 0;
+#X connect 23 0 24 0;
+#X connect 25 0 26 0;
