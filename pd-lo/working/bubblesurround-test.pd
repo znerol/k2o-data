@@ -1,6 +1,6 @@
-#N canvas 99 179 837 516 10;
+#N canvas 99 179 841 520 10;
 #X text 507 202 generator;
-#N canvas 94 138 806 592 mixer 0;
+#N canvas 94 138 810 596 mixer 0;
 #N canvas 31 496 319 184 autopan 0;
 #X obj 46 77 snapshot~;
 #X obj 132 42 metro 50;
@@ -73,7 +73,7 @@
 #X connect 24 0 5 0;
 #X connect 28 0 1 0;
 #X restore 623 74 pd mixer;
-#X obj 83 -83 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+#X obj 83 -83 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
 ;
 #X obj 430 57 + 200;
 #X obj 264 59 + 50;
