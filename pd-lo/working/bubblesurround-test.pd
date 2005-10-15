@@ -1,6 +1,6 @@
-#N canvas 99 179 841 520 10;
+#N canvas 99 179 849 528 10;
 #X text 507 202 generator;
-#N canvas 94 138 810 596 mixer 0;
+#N canvas 94 138 826 612 mixer 1;
 #N canvas 31 496 319 184 autopan 0;
 #X obj 46 77 snapshot~;
 #X obj 132 42 metro 50;
@@ -34,22 +34,22 @@
 #X obj 427 144 t f f;
 #X obj 426 171 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
-#X obj 402 361 list append;
 #X obj 65 219 loadbang;
 #X obj 59 -26 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
 ;
 #X text 424 85 receive mixer value requests;
 #X text 391 340 send results;
-#X floatatom 500 255 5 0 0 0 - - -;
 #X obj 243 57 inlet;
 #X obj 308 35 inlet;
 #X obj 372 57 inlet;
 #X text 238 33 azimuth;
 #X text 307 12 elevation;
 #X text 370 37 spread;
-#X obj 65 250 define_loudspeakers 2 -45 45;
+#X msg 486 292 list \$1;
+#X obj 402 361 glue;
+#X obj 66 251 define_loudspeakers 2 -89 89;
 #X connect 0 0 6 0;
-#X connect 1 0 16 0;
+#X connect 1 0 27 0;
 #X connect 2 0 28 0;
 #X connect 3 0 1 1;
 #X connect 4 0 1 2;
@@ -62,15 +62,15 @@
 #X connect 11 1 3 0;
 #X connect 12 0 14 0;
 #X connect 14 0 15 0;
-#X connect 14 1 16 1;
-#X connect 14 1 21 0;
+#X connect 14 1 26 0;
 #X connect 15 0 1 0;
-#X connect 16 0 13 0;
-#X connect 17 0 28 0;
-#X connect 18 0 0 0;
-#X connect 22 0 3 0;
-#X connect 23 0 4 0;
-#X connect 24 0 5 0;
+#X connect 16 0 28 0;
+#X connect 17 0 0 0;
+#X connect 20 0 3 0;
+#X connect 21 0 4 0;
+#X connect 22 0 5 0;
+#X connect 26 0 27 1;
+#X connect 27 0 13 0;
 #X connect 28 0 1 0;
 #X restore 623 74 pd mixer;
 #X obj 83 -83 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
