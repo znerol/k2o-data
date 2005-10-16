@@ -1,7 +1,7 @@
 #N struct net_array float x float y array netwks net_struct;
 #N struct net_struct float x float y float channel float innocence
 float v float netnum float color float datarank;
-#N canvas 117 46 891 545 10;
+#N canvas 117 46 895 549 10;
 #X obj 25 58 OSChead;
 #N canvas 217 401 514 364 net_struct 0;
 #X obj 53 59 struct net_struct float x float y float channel float
@@ -88,7 +88,7 @@ innocence float v float netnum float color float datarank;
 #X connect 10 0 7 0;
 #X restore 25 339 pd storenet;
 #X obj 24 246 OSCroute /bang /packet;
-#N canvas 153 179 763 412 packet 0;
+#N canvas 153 179 767 416 packet 0;
 #X obj 38 20 inlet;
 #X obj 568 26 inlet;
 #X obj 57 88 pointer;

@@ -1,4 +1,4 @@
-#N canvas 314 386 546 237 10;
+#N canvas 426 425 550 241 10;
 #X obj 15 303 dumpOSC 12345;
 #X obj 15 330 OSCroute /kismet;
 #X obj 170 160 sendOSC;
