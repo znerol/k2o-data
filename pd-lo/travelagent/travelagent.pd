@@ -1,93 +1,18 @@
 #N struct net_array float x float y array netwks net_struct;
 #N struct net_struct float x float y float angle float dist float channel
-float innocence float v float netnum float color float datarank;
-#N canvas 66 22 877 576 10;
-#N canvas 37 32 991 497 network 0;
+float innocence float v float netnum float color float datarank float
+net_index;
+#N canvas 1326 30 877 576 10;
+#N canvas 1505 369 991 497 network 1;
 #X obj 25 58 OSChead;
-#N canvas 217 401 518 368 net_struct 0;
+#N canvas 445 551 518 368 net_struct 0;
 #X obj 55 127 filledpolygon -v v 553 0 1 -1 -1 -1 1 1 1 1 -1;
 #X obj 53 59 struct net_struct float x float y float angle float dist
 float channel float innocence float v float netnum float color float
-datarank;
+datarank float net_index;
 #X restore 644 253 pd net_struct;
 #N canvas 0 22 458 308 net_pool 0;
-#X scalar net_array 0 0 \; -46.0382 51.0122 2.30866 68.7151 11 66 1
-0 0 0 \; 0 0 0 0 11 58 1 0 0 0.0123457 \; -45.2772 50.177 2.30866 67.5852
-11 75 1 0 0 0.0416667 \; -52.7526 59.254 2.30866 79.3339 6 98 1 0 0
-0.0486111 \; 0 0 0 0 6 97 1 0 0 0.0493827 \; 0 0 0 0 6 74 1 0 0 0.0617284
-\; 0 0 0 0 11 100 1 0 0 0.0740741 \; -45.1463 50.3949 2.30866 67.6597
-9 52 1 0 0 0 \; 0 0 0 0 6 31 1 0 0 0.0987654 \; 0 0 0 0 11 75 1 0 0
-0.111111 \; 0 0 0 0 2 100 1 0 0 0.123457 \; 0 0 0 0 6 75 1 0 0 0.135802
-\; -38.1117 31.5396 2.30866 49.4697 11 73 1 0 0 0.104895 \; 0 0 0 0
-3 36 1 0 0 0.160494 \; 0 0 0 0 0 100 1 0 0 0.17284 \; 0 0 0 0 6 75
-1 0 0 0.185185 \; 0 0 0 0 0 100 1 0 0 0.197531 \; 0 0 0 0 0 100 1 0
-0 0.209877 \; -21.2751 21.8933 2.30866 30.5278 1 74 1 0 0 0.138889
-\; 0 0 0 0 6 69 1 0 0 0.234568 \; 0 0 0 0 11 75 1 0 0 0.246914 \; 0
-0 0 0 0 100 1 0 0 0.259259 \; 0 0 0 0 0 50 1 0 0 0.271605 \; 0 0 0
-0 6 100 1 0 0 0.283951 \; 0 0 0 0 6 75 1 0 0 0.296296 \; 0 0 0 0 0
-100 1 0 0 0.308642 \; 0 0 0 0 1 75 1 0 0 0.320988 \; 0 0 0 0 6 31 1
-0 0 0.333333 \; 0 0 0 0 11 100 1 0 0 0.345679 \; 0 0 0 0 10 75 1 0
-0 0.358025 \; -34.4762 -30.3913 2.30866 45.9591 5 100 1 0 0 0.222222
-\; 0 0 0 0 7 75 1 0 0 0.382716 \; 0 0 0 0 10 75 1 0 0 0.395062 \; 0
-0 0 0 11 100 1 0 0 0.407407 \; 0 0 0 0 11 75 1 0 0 0.419753 \; 0 0
-0 0 8 75 1 0 0 0.432099 \; 0 0 0 0 9 100 1 0 0 0.444444 \; -3.44519
-0.243586 2.30866 3.4538 7 72 1 0 0 0.013986 \; -7.86017 7.10619 2.30866
-10.5962 0 100 1 0 0 0.270833 \; 0 0 0 0 6 100 1 0 0 0.481481 \; 0 0
-0 0 6 74 1 0 0 0.493827 \; 0 0 0 0 6 100 1 0 0 0.506173 \; -4.06827
-0.089762 2.30866 4.06926 6 100 1 0 0 0.298611 \; -1.77809 -0.121553
-2.30866 1.78224 6 75 1 0 0 0.298611 \; 0 0 0 0 11 100 1 0 0 0.54321
-\; -2.61012 0.157915 2.30866 2.6149 11 50 1 0 0 0.321678 \; 0 0 0 0
-11 75 1 0 0 0.567901 \; -4.90106 0.652818 2.30866 4.94435 11 100 1
-0 0 0.326389 \; 0 0 0 0 11 75 1 0 0 0.592593 \; 0 0 0 0 6 75 1 0 0
-0.604938 \; 0 0 0 0 6 75 1 0 0 0.617284 \; 0 0 0 0 6 75 1 0 0 0.62963
-\; 0 0 0 0 9 75 1 0 0 0.641975 \; 0 0 0 0 6 75 1 0 0 0.654321 \; 0
-0 0 0 11 100 1 0 0 0.666667 \; 0 0 0 0 1 100 1 0 0 0.679012 \; 0 0
-0 0 6 48 1 0 0 0.691358 \; 0 0 0 0 6 75 1 0 0 0.703704 \; 0 0 0 0 0
-100 1 0 0 0.716049 \; 0 0 0 0 6 75 1 0 0 0.728395 \; -5.80601 -2.25475
-2.30866 6.22845 6 100 1 0 0 0.41958 \; 0 0 0 0 6 75 1 0 0 0.753086
-\; 0 0 0 0 11 50 1 0 0 0.765432 \; 0 0 0 0 11 100 1 0 0 0.777778 \;
-0 0 0 0 10 75 1 0 0 0.790123 \; 0 0 0 0 6 100 1 0 0 0.802469 \; 0 0
-0 0 6 75 1 0 0 0.814815 \; 0 0 0 0 6 75 1 0 0 0.82716 \; 0 0 0 0 11
-50 1 0 0 0.839506 \; 0 0 0 0 10 75 1 0 0 0.851852 \; 0 0 0 0 1 100
-1 0 0 0.864198 \; 0 0 0 0 6 75 1 0 0 0.876543 \; 0 0 0 0 11 100 1 0
-0 0.888889 \; 0 0 0 0 9 75 1 0 0 0.901235 \; 0 0 0 0 6 50 1 0 0 0.91358
-\; 0 0 0 0 11 100 1 0 0 0.925926 \; -66.5928 -68.2693 2.30866 95.3692
-11 75 1 0 0 0.534722 \; 0 0 0 0 11 75 1 0 0 0.950617 \; 0 0 0 0 6 75
-1 0 0 0.962963 \; 0 0 0 0 6 100 1 0 0 0.975309 \; 0 0 0 0 0 100 1 0
-0 0.987654 \; 0 0 0 0 6 75 1 0 0 1 \; 0 0 0 0 6 50 1 0 0 1.01235 \;
-0 0 0 0 11 75 1 0 0 1.02469 \; 0 0 0 0 0 100 1 0 0 1.03704 \; 0 0 0
-0 6 75 1 0 0 1.04938 \; 0 0 0 0 6 75 1 0 0 1.06173 \; 0 0 0 0 6 100
-1 0 0 1.07407 \; -8.53822 -6.47037 2.30866 10.7129 0 100 1 0 0 0.618056
-\; 0 0 0 0 10 98 1 0 0 1.09877 \; 0 0 0 0 0 100 1 0 0 1.11111 \; 0
-0 0 0 6 100 1 0 0 1.12346 \; 0 0 0 0 0 100 1 0 0 1.1358 \; 0 0 0 0
-6 75 1 0 0 1.14815 \; 0 0 0 0 11 100 1 0 0 1.16049 \; 0 0 0 0 11 75
-1 0 0 1.17284 \; -4.62803 -0.846569 2.30866 4.70482 11 75 1 0 0 0.673611
-\; 0 0 0 0 11 50 1 0 0 1.19753 \; 0 0 0 0 11 75 1 0 0 1.20988 \; -5.82459
--1.35498 2.30866 5.98012 3 75 1 0 0 0.0694444 \; 0 0 0 0 11 100 1 0
-0 0.123457 \; 0 0 0 0 11 100 1 0 0 0.123457 \; 0 0 0 0 6 100 1 0 0
-0.123457 \; 0 0 0 0 11 98 1 0 0 0.123457 \; -5.38101 -1.60076 2.30866
-5.61406 11 100 1 0 0 0.0699301 \; 0 0 0 0 10 100 1 0 0 0.123457 \;
-0 0 0 0 6 75 1 0 0 0.123457 \; 0 0 0 0 6 100 1 0 0 0.123457 \; 0 0
-0 0 6 100 1 0 0 0.123457 \; 0 0 0 0 6 100 1 0 0 0.123457 \; 0 0 0 0
-3 75 1 0 0 0.135802 \; 0 0 0 0 2 100 1 0 0 0.135802 \; 0 0 0 0 0 50
-1 0 0 0.135802 \; 0 0 0 0 6 100 1 0 0 0.135802 \; 0 0 0 0 1 75 1 0
-0 0.135802 \; 0 0 0 0 0 100 1 0 0 0.135802 \; 0 0 0 0 1 75 1 0 0 0.135802
-\; 0 0 0 0 9 75 1 0 0 0.135802 \; 0 0 0 0 11 75 1 0 0 0.135802 \; 0
-0 0 0 6 75 1 0 0 0.135802 \; 0 0 0 0 11 100 1 0 0 0.148148 \; 0 0 0
-0 0 100 1 0 0 0.148148 \; 0 0 0 0 11 100 1 0 0 0.148148 \; 0 0 0 0
-11 100 1 0 0 0.148148 \; 0 0 0 0 11 75 1 0 0 0.148148 \; 0 0 0 0 9
-100 1 0 0 0.148148 \; 0 0 0 0 11 50 1 0 0 0.148148 \; 0 0 0 0 6 75
-1 0 0 0.148148 \; -4.06421 -0.38149 2.30866 4.08207 11 100 1 0 0 0.0839161
-\; 0 0 0 0 6 100 1 0 0 0.148148 \; -3.01564 0.658258 2.30866 3.08665
-0 64 1 0 0 0 \; 0 0 0 0 6 75 1 0 0 0.160494 \; 0 0 0 0 11 75 1 0 0
-0.160494 \; 0 0 0 0 10 100 1 0 0 0.160494 \; 0 0 0 0 9 75 1 0 0 0.160494
-\; 0 0 0 0 6 75 1 0 0 0.160494 \; 0 0 0 0 6 75 1 0 0 0.160494 \; -0.096916
-0.034524 2.30866 0.102881 0 100 1 0 0 0.0909091 \; 0 0 0 0 11 100 1
-0 0 0.160494 \; 0 -0.037401 2.30866 0.037401 6 100 1 0 0 0.0935252
-\; 0 -0.299208 2.30866 0.299208 6 100 1 0 0 0.100719 \; -1.21926 0.037401
-2.30866 1.21984 0 100 1 0 0 0.0972222 \; 0 0.037401 2.30866 0.037401
-0 100 1 0 0 0.0979021 \; 0 -0 2.30866 0 6 75 1 0 0 0.0972222 \; 0 0.037401
-2.30866 0.037401 0 100 1 0 0 0.0979021 \; \;;
+#X scalar net_array 0 0 \; 0 0 0 0 0 0 0 0 0 0 0 \; \;;
 #X coords -20 -20 20 20 200 200 1;
 #X restore 644 50 pd net_pool;
 #X obj 69 90 change -1;
@@ -160,50 +85,61 @@ datarank;
 #X restore 329 220 pd normlz;
 #X obj 447 70 r info;
 #X text 447 50 get info data;
-#X obj 73 287 set net_struct x y angle dist v innocence datarank channel
-;
 #X obj 90 170 unpack f f f f;
 #X obj 46 362 s do_net;
 #X obj 46 172 t b b;
 #X obj 45 339 pointer;
 #X obj 87 320 r \$0-anet;
 #X floatatom 350 340 5 0 0 0 - - -;
-#X obj 118 122 OSCroute /localpos /stat /channel;
 #X obj 448 90 OSCroute /networks /rate;
 #X obj 630 276 s \$0-chanwave;
 #X obj 662 201 t b f;
 #X obj 630 256 pack f f f;
-#X connect 0 0 14 0;
-#X connect 1 0 18 0;
-#X connect 4 0 11 5;
+#X obj 118 122 OSCroute /localpos /stat /channel /net_index;
+#X obj 73 287 set net_struct x y angle dist v innocence datarank channel
+net_index;
+#X obj 188 397 pack f f f f f;
+#X msg 188 419 send /drone/net \$1 \$2 \$3 \$4;
+#X obj 188 441 s \$0-to_drone;
+#X connect 0 0 13 0;
+#X connect 1 0 21 0;
+#X connect 4 0 22 5;
+#X connect 4 0 23 2;
 #X connect 4 1 8 0;
-#X connect 4 1 22 1;
-#X connect 5 0 11 8;
-#X connect 6 0 11 4;
-#X connect 7 0 11 0;
-#X connect 8 0 11 6;
-#X connect 8 0 17 0;
-#X connect 9 0 19 0;
-#X connect 12 0 7 1;
-#X connect 12 1 11 1;
-#X connect 12 2 11 2;
-#X connect 12 3 11 3;
-#X connect 14 0 15 0;
-#X connect 14 1 7 0;
-#X connect 15 0 13 0;
-#X connect 16 0 15 1;
-#X connect 18 0 12 0;
-#X connect 18 1 4 0;
-#X connect 18 2 11 7;
-#X connect 18 2 22 0;
-#X connect 19 0 8 1;
-#X connect 19 1 21 0;
-#X connect 21 0 22 0;
-#X connect 21 1 22 2;
-#X connect 22 0 20 0;
+#X connect 4 1 20 1;
+#X connect 4 1 23 3;
+#X connect 5 0 22 9;
+#X connect 6 0 22 4;
+#X connect 7 0 22 0;
+#X connect 8 0 16 0;
+#X connect 8 0 22 6;
+#X connect 9 0 17 0;
+#X connect 11 0 7 1;
+#X connect 11 0 23 0;
+#X connect 11 1 22 1;
+#X connect 11 1 23 1;
+#X connect 11 2 22 2;
+#X connect 11 3 22 3;
+#X connect 13 0 14 0;
+#X connect 13 1 7 0;
+#X connect 14 0 12 0;
+#X connect 15 0 14 1;
+#X connect 17 0 8 1;
+#X connect 17 1 19 0;
+#X connect 19 0 20 0;
+#X connect 19 1 20 2;
+#X connect 20 0 18 0;
+#X connect 21 0 11 0;
+#X connect 21 1 4 0;
+#X connect 21 2 20 0;
+#X connect 21 2 22 7;
+#X connect 21 3 22 8;
+#X connect 21 3 23 4;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
 #X restore 25 381 pd storenet;
 #X obj 24 246 OSCroute /bang /packet;
-#N canvas 215 91 811 460 packet 0;
+#N canvas 1303 20 717 327 packet 0;
 #X obj 38 20 inlet;
 #X obj 568 26 inlet;
 #X obj 57 68 pointer;
@@ -211,20 +147,17 @@ datarank;
 #X text 40 2 bang;
 #X text 568 6 osc data;
 #X obj 88 203 s \$0-to_drone;
-#X msg 87 177 send /drone/packet \$1 \$2;
-#X obj 87 151 pack;
 #X obj 57 89 t p p;
 #X obj 57 245 outlet;
-#X obj 87 117 get net_struct innocence channel;
+#X obj 88 122 get net_struct net_index;
+#X msg 87 177 send /drone/packet \$1;
 #X connect 0 0 2 0;
-#X connect 2 0 9 0;
+#X connect 2 0 7 0;
 #X connect 3 0 2 1;
-#X connect 7 0 6 0;
-#X connect 8 0 7 0;
+#X connect 7 0 8 0;
+#X connect 7 1 9 0;
 #X connect 9 0 10 0;
-#X connect 9 1 11 0;
-#X connect 11 0 8 0;
-#X connect 11 1 8 1;
+#X connect 10 0 6 0;
 #X restore 99 306 pd packet;
 #X text 70 175 set active pointer;
 #X text 35 228 dissect network message;
@@ -295,7 +228,7 @@ datarank;
 #X connect 9 0 10 0;
 #X connect 11 0 0 0;
 #X restore 27 40 pd k2o-oscin;
-#N canvas 651 22 667 591 drone-oscin 1;
+#N canvas 1823 65 681 634 drone-oscin 0;
 #X obj 17 20 dumpOSC 9998;
 #X obj 17 41 OSCroute /soupshot;
 #X obj 338 438 makesymbol ../data/shot%s_%s.wav;
@@ -336,6 +269,16 @@ datarank;
 repetition;
 #X obj 291 335 t b b;
 #X msg 267 71 18 9;
+#X obj 417 112 random 50;
+#X obj 417 134 + 1;
+#X obj 486 111 random 5;
+#X obj 488 129 + 1;
+#X obj 420 160 pack f f;
+#X obj 419 49 metro 5000;
+#X obj 492 92 random 20000;
+#X obj 420 68 t b b b;
+#X obj 392 36 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
 #X connect 0 0 1 0;
 #X connect 1 0 23 0;
 #X connect 2 0 22 1;
@@ -353,8 +296,8 @@ repetition;
 #X connect 11 0 9 0;
 #X connect 11 0 30 0;
 #X connect 12 0 23 0;
-#X connect 14 0 32 1;
 #X connect 15 0 23 0;
+#X connect 16 0 32 1;
 #X connect 17 0 23 0;
 #X connect 18 0 23 0;
 #X connect 19 0 23 0;
@@ -382,6 +325,17 @@ repetition;
 #X connect 35 0 22 0;
 #X connect 35 1 9 0;
 #X connect 36 0 23 0;
+#X connect 37 0 38 0;
+#X connect 38 0 41 0;
+#X connect 39 0 40 0;
+#X connect 40 0 41 1;
+#X connect 41 0 23 0;
+#X connect 42 0 44 0;
+#X connect 43 0 42 1;
+#X connect 44 0 37 0;
+#X connect 44 1 39 0;
+#X connect 44 2 43 0;
+#X connect 45 0 42 0;
 #X restore 124 41 pd drone-oscin;
 #N canvas 377 378 421 238 drone-oscout 0;
 #X obj 27 147 sendOSC;
@@ -958,7 +912,7 @@ repetition;
 #X obj 718 201 t s s;
 #X obj 267 199 s \$0-activesample;
 #X obj 752 228 s \$0-activesample;
-#X obj 213 36 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+#X obj 213 36 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
 ;
 #X msg 145 216 0.6;
 #X msg 623 216 0.6;
@@ -1049,7 +1003,7 @@ repetition;
 #X obj 512 289 openpanel;
 #X obj 584 289 r \$0-opensound;
 #X text 514 395 logplayer;
-#N canvas 337 298 663 474 logplayer 1;
+#N canvas 1711 402 663 474 logplayer 0;
 #X obj 39 50 inlet;
 #X obj 106 372 shell;
 #X msg 60 105 /usr/bin/killall k2oplay;
@@ -1058,8 +1012,7 @@ repetition;
 #X obj 60 165 print killall;
 #X obj 134 400 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
-#X msg 106 297 list /Users/lo/Development/Projects/k2o/k2o-data/pd-lo/data/shot03.txt
-;
+#X msg 106 297 list /home/bek/k2o/k2o-data/pd-lo/data/shot39.txt;
 #X msg 127 275 set list \$1;
 #X obj 99 230 spigot;
 #X msg 175 155 0;
@@ -1114,7 +1067,7 @@ repetition;
 #X obj 39 421 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
 #X obj 65 423 nqpoly4 32 nqgrain gv chan;
-#X obj 297 236 r do_net;
+#X obj 296 232 r do_net;
 #X obj 319 317 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
 #X obj 271 408 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
@@ -1125,6 +1078,10 @@ repetition;
 -1;
 #X obj 282 452 r \$0-chanwave;
 #X obj 271 375 nqpoly4 16 nqnetwave gv chan;
+#X obj 176 105 r info;
+#X obj 176 129 OSCroute /rate;
+#X obj 178 168 s \$0-to_drone;
+#X msg 177 150 send /drone/rate \$1;
 #X connect 4 0 41 0;
 #X connect 5 0 41 0;
 #X connect 7 0 6 0;
@@ -1163,3 +1120,6 @@ repetition;
 #X connect 53 0 42 0;
 #X connect 54 0 21 0;
 #X connect 55 0 50 0;
+#X connect 56 0 57 0;
+#X connect 57 0 59 0;
+#X connect 59 0 58 0;
