@@ -1,4 +1,4 @@
-#N canvas 119 164 909 579 10;
+#N canvas 60 46 913 583 10;
 #X obj 105 40 inlet;
 #X obj 508 52 inlet;
 #X obj 527 144 s \$0-fadedur;
@@ -19,7 +19,7 @@
 #X text 425 568 toggle audio for this window;
 #X obj 105 65 t a b;
 #X msg 410 80 1;
-#N canvas 0 22 1044 699 voice 1;
+#N canvas -18 116 985 485 voice 0;
 #X obj 458 281 *~;
 #X obj 519 280 *~;
 #X obj 658 131 line~;
@@ -55,7 +55,7 @@
 #X obj 519 345 throw~ \$4-8;
 #X obj 772 137 outlet;
 #X text 771 154 done!;
-#X obj 879 157 switch~;
+#X obj 873 167 switch~;
 #X obj 773 47 route 0 1;
 #X msg 888 126 1;
 #X msg 829 126 0;
@@ -325,7 +325,6 @@ aleat \, taille du grain \, aleat \, freq relative \, aleat \, amplitude
 \, grainsize (ms) \, grain rand \, midi note \, note rand \, amplitude
 (0..1) \, amp rand \, envelope table (symbol);
 #X msg 208 367 0;
-#X msg 484 171 1;
 #X text 64 90 input: tablename \, tablesize \, networkpointer \, envelope
 ;
 #X obj 105 107 unpack s f p s;
@@ -333,10 +332,11 @@ aleat \, taille du grain \, aleat \, freq relative \, aleat \, amplitude
 #X obj 182 428 * 2;
 #X obj 61 183 get net_struct innocence angle dist;
 #X obj 71 275 pack s f 0.5 0.5 500 200 f 10 0.8 0 s;
+#X msg 484 171 0.8;
 #X connect 0 0 18 0;
 #X connect 1 0 22 0;
 #X connect 1 0 3 0;
-#X connect 1 0 26 0;
+#X connect 1 0 32 0;
 #X connect 1 0 23 1;
 #X connect 3 0 4 0;
 #X connect 6 0 20 3;
@@ -344,7 +344,7 @@ aleat \, taille du grain \, aleat \, freq relative \, aleat \, amplitude
 #X connect 15 0 13 0;
 #X connect 16 0 8 0;
 #X connect 16 1 15 0;
-#X connect 18 0 28 0;
+#X connect 18 0 27 0;
 #X connect 18 1 19 0;
 #X connect 19 0 13 0;
 #X connect 19 0 6 0;
@@ -353,14 +353,14 @@ aleat \, taille du grain \, aleat \, freq relative \, aleat \, amplitude
 #X connect 23 0 20 0;
 #X connect 23 1 25 0;
 #X connect 25 0 6 0;
-#X connect 26 0 7 0;
-#X connect 28 0 32 0;
-#X connect 28 1 32 1;
-#X connect 28 2 31 0;
-#X connect 28 3 32 10;
-#X connect 29 0 20 1;
-#X connect 30 0 20 2;
-#X connect 31 0 32 6;
-#X connect 31 1 29 0;
-#X connect 31 2 30 0;
-#X connect 32 0 23 0;
+#X connect 27 0 31 0;
+#X connect 27 1 31 1;
+#X connect 27 2 30 0;
+#X connect 27 3 31 10;
+#X connect 28 0 20 1;
+#X connect 29 0 20 2;
+#X connect 30 0 31 6;
+#X connect 30 1 28 0;
+#X connect 30 2 29 0;
+#X connect 31 0 23 0;
+#X connect 32 0 7 0;
