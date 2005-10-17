@@ -1,7 +1,7 @@
 #N struct net_array float x float y array netwks net_struct;
 #N struct net_struct float x float y float angle float dist float channel
 float innocence float v float netnum float color float datarank;
-#N canvas 91 78 845 544 10;
+#N canvas 166 316 845 544 10;
 #N canvas 38 340 951 457 network 0;
 #X obj 25 58 OSChead;
 #N canvas 217 401 518 368 net_struct 0;
@@ -11,7 +11,52 @@ float channel float innocence float v float netnum float color float
 datarank;
 #X restore 644 253 pd net_struct;
 #N canvas 0 22 458 308 net_pool 0;
-#X scalar net_array 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; \;;
+#X scalar net_array 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0
+0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0
+0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0
+0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0
+0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0
+0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0
+0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0
+0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0
+0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0
+0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; -3.10308 -0.044477 2.30866
+3.10339 7 72 1 0 0 0.256944 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0
+0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0
+0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0
+0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0
+0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0
+0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0
+0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0
+0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+-4.2216 -1.27979 2.30866 4.41132 11 75 1 0 0 0.666667 \; 0 0 0 0 0
+0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; -5.14676 -1.73858 2.30866 5.43248
+3 75 1 0 0 0.6875 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 0 0 0 0 \;
+\;;
 #X coords -20 -20 20 20 200 200 1;
 #X restore 644 50 pd net_pool;
 #X obj 69 90 change -1;
@@ -202,7 +247,7 @@ datarank;
 #X connect 9 0 10 0;
 #X connect 11 0 0 0;
 #X restore 27 40 pd k2o-oscin;
-#N canvas 330 119 650 530 drone-oscin 0;
+#N canvas 501 85 650 530 drone-oscin 1;
 #X obj 17 20 dumpOSC 9998;
 #X obj 17 41 OSCroute /soupshot;
 #X obj 4 345 makesymbol ../data/shot%s_%s.wav;
@@ -215,14 +260,18 @@ datarank;
 #X obj 7 320 pack s s;
 #X obj 69 234 makefilename %d;
 #X obj 16 258 makefilename 0%d;
-#X msg 53 87 1 1;
-#X msg 84 86 1 3;
+#X msg 54 87 1 1;
+#X msg 194 92 1 3;
 #X obj 18 132 t l l;
 #X obj 32 287 t s s;
 #X obj 190 464 s \$0-openlog;
 #X obj 191 411 makesymbol /Users/lo/Development/Projects/k2o/k2o-data/pd-lo/data/shot%s.txt
 ;
-#X msg 121 86 3 3;
+#X msg 231 92 3 3;
+#X obj 215 370 makesymbol /home/bek/k2o/k2o-data/pd-lo/data/shot%s.txt
+;
+#X msg 86 87 1 3;
+#X msg 120 86 1 4;
 #X connect 0 0 1 0;
 #X connect 1 0 14 0;
 #X connect 2 0 3 0;
@@ -240,9 +289,12 @@ datarank;
 #X connect 13 0 14 0;
 #X connect 14 0 4 0;
 #X connect 15 0 9 0;
-#X connect 15 1 17 0;
+#X connect 15 1 19 0;
 #X connect 17 0 16 0;
 #X connect 18 0 14 0;
+#X connect 19 0 16 0;
+#X connect 20 0 14 0;
+#X connect 21 0 14 0;
 #X restore 124 41 pd drone-oscin;
 #N canvas 377 378 417 234 drone-oscout 0;
 #X obj 27 147 sendOSC;
@@ -456,12 +508,12 @@ datarank;
 #X connect 20 0 17 1;
 #X connect 21 0 5 0;
 #X connect 22 0 19 0;
-#X restore 284 463 pd channel wave;
+#X restore 276 451 pd channel wave;
 #X obj 93 209 r do_packet;
 #X obj 65 397 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
 #X text 83 398 overload;
-#N canvas 137 58 891 714 soundplayer 0;
+#N canvas 216 86 967 768 soundplayer 0;
 #X obj 550 84 table \$0-env 1024;
 #X obj 552 9 \$0;
 #X msg 551 30 \; \$1-env cosinesum 1024 0.5 -0.5 \;;
@@ -488,7 +540,7 @@ datarank;
 #X obj 184 468 *~;
 #X obj 235 469 *~;
 #X obj 285 468 *~;
-#X obj 246 392 route 0 1 2 3 4 5;
+#X obj 253 343 route 0 1 2 3 4 5;
 #X msg 472 283 set \$1;
 #X obj 472 264 symbol \$0-sample-r;
 #X obj 632 265 r \$0-lsp;
@@ -503,13 +555,13 @@ datarank;
 #X msg 676 337 45;
 #X obj 653 286 r \$0-lb;
 #X msg 710 336 20;
-#X obj 252 285 r \$0-lsp;
-#X obj 247 369 vbap 0 0;
-#X obj 262 305 r \$0-lb;
-#X msg 315 346 20;
-#X msg 285 346 -45;
+#X obj 259 236 r \$0-lsp;
+#X obj 254 320 vbap 0 0;
+#X obj 269 256 r \$0-lb;
+#X msg 322 297 20;
+#X msg 292 297 -45;
 #X obj 655 305 t b b b;
-#X obj 264 324 t b b b;
+#X obj 271 275 t b b b;
 #X obj 117 95 pack s s s;
 #X obj 96 31 t b s b b;
 #X obj 147 52 symbol \$0-sample;
@@ -521,9 +573,23 @@ datarank;
 #X obj 117 339 *~ 0.3;
 #X obj 472 308 tabplay~;
 #X obj 474 340 *~ 0.3;
-#X obj 98 197 t a a;
+#X obj 111 207 t a a;
 #X obj 552 -18 r \$0-lb;
 #X obj 52 144 r \$0-stop;
+#X obj 88 168 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 59 449 f;
+#X obj 106 449 f;
+#X obj 155 450 f;
+#X obj 194 447 f;
+#X obj 249 446 f;
+#X obj 299 447 f;
+#X obj 468 428 f;
+#X obj 515 428 f;
+#X obj 564 429 f;
+#X obj 603 426 f;
+#X obj 658 425 f;
+#X obj 708 426 f;
 #X connect 1 0 2 0;
 #X connect 3 0 6 0;
 #X connect 3 0 54 0;
@@ -538,12 +604,12 @@ datarank;
 #X connect 23 0 17 0;
 #X connect 24 0 18 0;
 #X connect 25 0 19 0;
-#X connect 26 0 20 1;
-#X connect 26 1 21 1;
-#X connect 26 2 22 1;
-#X connect 26 3 23 1;
-#X connect 26 4 24 1;
-#X connect 26 5 25 1;
+#X connect 26 0 63 0;
+#X connect 26 1 64 0;
+#X connect 26 2 65 0;
+#X connect 26 3 66 0;
+#X connect 26 4 67 0;
+#X connect 26 5 68 0;
 #X connect 27 0 57 0;
 #X connect 28 0 27 0;
 #X connect 29 0 37 0;
@@ -553,12 +619,12 @@ datarank;
 #X connect 33 0 17 0;
 #X connect 34 0 18 0;
 #X connect 35 0 19 0;
-#X connect 36 0 30 1;
-#X connect 36 1 31 1;
-#X connect 36 2 32 1;
-#X connect 36 3 33 1;
-#X connect 36 4 34 1;
-#X connect 36 5 35 1;
+#X connect 36 0 69 0;
+#X connect 36 1 70 0;
+#X connect 36 2 71 0;
+#X connect 36 3 72 0;
+#X connect 36 4 73 0;
+#X connect 36 5 74 0;
 #X connect 37 0 36 0;
 #X connect 38 0 37 1;
 #X connect 39 0 46 0;
@@ -602,6 +668,19 @@ datarank;
 #X connect 59 1 57 0;
 #X connect 60 0 1 0;
 #X connect 61 0 9 0;
+#X connect 62 0 59 0;
+#X connect 63 0 20 1;
+#X connect 64 0 21 1;
+#X connect 65 0 22 1;
+#X connect 66 0 23 1;
+#X connect 67 0 24 1;
+#X connect 68 0 25 1;
+#X connect 69 0 30 1;
+#X connect 70 0 31 1;
+#X connect 71 0 32 1;
+#X connect 72 0 33 1;
+#X connect 73 0 34 1;
+#X connect 74 0 35 1;
 #X restore 513 334 pd soundplayer;
 #X text 510 246 soundplayer;
 #X obj 626 156 define_loudspeakers 2 -89 89;
@@ -620,10 +699,7 @@ datarank;
 #X obj 41 155 print killall;
 #X obj 134 350 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
-#X msg 106 247 list /Users/lo/Development/Projects/k2o/k2o-data/pd-lo/data/shot01.txt
-;
-#X msg 105 300 /usr/local/bin/k2oplay -l \$1 osc.udp://127.0.0.1:12345
-;
+#X msg 106 247 list /home/bek/k2o/k2o-data/pd-lo/data/shot03.txt;
 #X msg 127 225 set list \$1;
 #X obj 99 200 spigot;
 #X obj 39 77 t b s b;
@@ -631,24 +707,26 @@ datarank;
 #X msg 180 156 1;
 #X obj 118 51 r \$0-stop;
 #X obj 117 73 t b b;
-#X connect 0 0 11 0;
+#X msg 105 300 /usr/local/bin/k2oplay -l -d3 \$1 osc.udp://127.0.0.1:12345
+;
+#X connect 0 0 10 0;
 #X connect 1 0 4 0;
 #X connect 1 1 6 0;
 #X connect 2 0 3 0;
 #X connect 3 0 5 0;
-#X connect 3 1 10 0;
-#X connect 7 0 8 0;
-#X connect 8 0 1 0;
+#X connect 3 1 9 0;
+#X connect 7 0 15 0;
+#X connect 8 0 7 0;
 #X connect 9 0 7 0;
-#X connect 10 0 7 0;
-#X connect 11 0 2 0;
-#X connect 11 1 9 0;
-#X connect 11 2 13 0;
-#X connect 12 0 10 1;
-#X connect 13 0 10 1;
-#X connect 14 0 15 0;
-#X connect 15 0 2 0;
-#X connect 15 1 12 0;
+#X connect 10 0 2 0;
+#X connect 10 1 8 0;
+#X connect 10 2 12 0;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 14 0;
+#X connect 14 0 2 0;
+#X connect 14 1 11 0;
+#X connect 15 0 1 0;
 #X restore 516 426 pd logplayer;
 #X obj 517 372 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
@@ -664,7 +742,7 @@ datarank;
 #X obj 666 109 s \$0-stop;
 #X msg 272 318 20;
 #X obj 611 203 s lsp;
-#X obj 65 373 nqpoly4 32 nqgrain gv chan;
+#X obj 65 373 nqpoly4 16 nqgrain gv chan;
 #X connect 4 0 44 0;
 #X connect 5 0 44 0;
 #X connect 7 0 6 0;

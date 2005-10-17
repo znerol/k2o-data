@@ -371,10 +371,10 @@ aleat \, taille du grain \, aleat \, freq relative \, aleat \, amplitude
 #X text 64 90 input: tablename \, tablesize \, networkpointer \, envelope
 ;
 #X obj 105 107 unpack s f p s;
-#X obj 71 275 pack s f 0.5 0.5 500 200 69 50 0.9 0 s;
 #X obj 138 405 * -57.2958;
 #X obj 182 428 * 2;
 #X obj 61 183 get net_struct innocence angle dist;
+#X obj 71 275 pack s f 0.5 0.5 500 200 69 10 0.9 0 s;
 #X connect 0 0 18 0;
 #X connect 1 0 22 0;
 #X connect 1 0 3 0;
@@ -396,12 +396,13 @@ aleat \, taille du grain \, aleat \, freq relative \, aleat \, amplitude
 #X connect 23 1 25 0;
 #X connect 25 0 6 0;
 #X connect 26 0 7 0;
-#X connect 28 0 29 0;
-#X connect 28 1 29 1;
-#X connect 28 2 32 0;
-#X connect 28 3 29 10;
-#X connect 29 0 23 0;
-#X connect 30 0 20 1;
-#X connect 31 0 20 2;
-#X connect 32 1 30 0;
-#X connect 32 2 31 0;
+#X connect 28 0 32 0;
+#X connect 28 1 32 1;
+#X connect 28 2 31 0;
+#X connect 28 3 32 10;
+#X connect 29 0 20 1;
+#X connect 30 0 20 2;
+#X connect 31 0 32 6;
+#X connect 31 1 29 0;
+#X connect 31 2 30 0;
+#X connect 32 0 23 0;
