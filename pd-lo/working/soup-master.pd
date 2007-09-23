@@ -9,7 +9,7 @@ innocence float v float netnum float color float datarank;
 #X obj 55 127 filledpolygon -v v 553 0 1 -1 -1 -1 1 1 1 1 -1;
 #X restore 644 253 pd net_struct;
 #N canvas 0 22 458 308 net_pool 0;
-#X scalar net_array 0 0 \; 0 0 0 0 0 0 0 0 \; \;;
+#X scalar net_array 0 0 \; 0 0 10 95 1 0 0 0 \; \;;
 #X coords -20 -20 20 20 200 200 1;
 #X restore 644 50 pd net_pool;
 #X obj 69 90 change -1;
