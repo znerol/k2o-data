@@ -1,0 +1,491 @@
+@charset "iso-8859-1";
+
+/*******************************************************************************
+*  skidoo_too.css : 2005.06.28
+* -----------------------------------------------------------------------------
+*  A remake of the skidoo layout with the middle column appearing first in
+*  source ordering.
+*******************************************************************************/
+
+/* begin with generic selectors so that they can be overridden if needed
+ * by classes deeper in the stylesheet
+ */
+.clear
+{
+	clear: both;
+	padding-bottom: 1px;	/* for Gecko-based browsers */
+	margin-bottom: -1px;	/* for Gecko-based browsers */
+}
+.hide
+{
+	display: none;
+}
+.inside
+{
+	/* glitch in IE caused by vertical padding in this class, so 0 padding is
+	 * set here and those blocks that need the vertical padding must be 
+	 * applied to the parent element. the purpose of this class is to provide
+	 * horizontal padding without using hacks to get around IE's broken box 
+	 * model. so it's okay to apply vertical padding to the parent element, 
+	 * just not horizontal padding.
+	 */
+	padding: 0 1em;
+}
+
+/* margin values and font sizes for headings, and margins on paragraphs
+ * and lists are not consistent across browser platforms. to achieve a
+ * consistent look we need to explicity set these values here. it may
+ * seem an odd way to declare the margins like this but you never
+ * know what kind of horizontal padding a browser may be using on an
+ * element, and I only want to change the vertical padding.
+ *
+ * pixels are used here, rather than ems, because I want a consistent
+ * margin on the different headings. if I use ems, 1em for an h1 element
+ * is much larger than 1em on an h6 element. I don't wnat this.
+ *
+ * salt to taste
+ */
+ul, ol, dl, p, h1, h2, h3, h4, h5, h6
+{
+	margin-top: 14px;
+	margin-bottom: 14px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+h1
+{
+	font-size: 220%;
+}
+h2
+{
+	font-size: 190%;
+}
+h3
+{
+	font-size: 160%;
+}
+h4
+{
+	font-size: 130%;
+}
+h5
+{
+	font-size: 100%;
+}
+h6
+{
+	font-size: 70%;
+}
+
+/* alter some HTML elements' default style
+ */
+label
+{
+	cursor: pointer;
+}
+table
+{
+	font-size: 100%;
+}
+td, th
+{
+	vertical-align: top;
+}
+
+/* now we craft the core layout of the page. this includes positioning and
+ * gutter space. colors and fonts should not come into play at this point.
+ * when defining a border, default its color to white which is probably
+ * the safest thing to do.
+ */
+body
+{
+	margin: 25px 4%;	/* margin instead of padding for the gutterspace around 
+	 			   the layout because IE breaks the layout when 
+	 			   horizontal padding is applied to the body element.
+	 			   % over pixels for that horizontal gutterspace so that
+	 			   it automatically goes below 20px on low-res browsers
+	 			   to create more space for the content. */
+	font-size: 100.1%;	/* resolve some font size issues in some layouts for
+				   some browsers. (in other words, i got no clue.) */
+}
+#pageWrapper
+{
+	border: solid 1px #fff;
+	border-width: 0 1px;
+	min-width: 40em;	/* IE doens't understand this property. EMs are used
+				   so that as the font size increases, the proportional
+				   limitations (min-width) increase with it, rather
+				   than creating a middle column that can only fit
+				   3 or 4 characters in it. */
+	width: auto;
+}
+* html #pageWrapper
+{
+	/* \*/
+		word-wrap: break-word;
+	/* invalid CSS but keeps IE from breaking horribly under narrow viewports */
+}
+#masthead
+{
+	border-width: 1px 0 0 0;
+	padding: 0;
+	border-color: #FFF;
+	border-style: solid;
+}
+#masthead h1
+{
+	padding: 0;
+	margin: 0;
+}
+#outerColumnContainer
+{
+	/* reserves space for the left and right columns. you can use either
+	 * padding, margins, or borders, depending on your needs. however you
+	 * can use the border method to create a background color for both left
+	 * and right columns
+	 */
+	border-left: solid 14em #fff;
+	border-right: solid 180px #fff;
+}
+#innerColumnContainer
+{
+	border: solid 1px #fff;
+	border-width: 0 1px;
+	margin: 0 -1px;		/* compensate for the borders because of
+				   100% width declaration */
+	width: 100%;
+	z-index: 1;
+}
+#leftColumn, #middleColumn, #rightColumn, * html #SOWrap
+{
+	overflow: visible;	/* fix for IE italics bug */
+	position: relative;	/* fix some rendering issues */
+}
+#SOWrap
+{
+	float: left;
+	margin: 0 -1px 0 0;
+	width: 100%;
+	z-index: 3;
+}
+#middleColumn
+{
+	float: right;
+	margin: 0 0 0 -1px;
+	width: 100%;
+	z-index: 5;
+}
+#leftColumn
+{
+	float: left;
+	margin: 0 1px 0 -14em;
+	width: 14em;
+	z-index: 4;
+}
+#rightColumn
+{
+	float: right;
+	width: 180px;
+	margin: 0 -180px 0 1px;
+	z-index: 2;
+}
+#footer
+{
+	border: solid 1px #fff;
+	border-width: 1px 0;
+	padding: 0.5em;
+}
+
+p.fontsize-set
+{
+	text-align: center;
+}
+p.fontsize-set img
+{
+	border-width: 0;
+}
+
+
+
+/* everything below this point is related to the page's "theme" and could be
+ * placed in a separate stylesheet to allow for multiple color/font scemes on
+ * the layout. you should probably leave a default theme within this stylesheet
+ * just to be on the safe side.	
+ */
+#pageWrapper, #masthead, #footer
+{
+	border-color: #333;
+}
+#innerColumnContainer
+{
+	border-color: #C7CBBC;
+}
+html, body
+{
+	/* note that both html and body elements are in the selector.
+	 * this is because we have margins applied to the body element
+	 * and the HTML's background property will show through if
+	 * it is ever set. _DO_NOT_ apply a font-size value to the
+	 * html or body elements, set it in #pageWrapper.
+	 */
+	background-color: #C7CBBC;
+	color: #333;
+	font-family: arial, helvetica, sans-serif;
+}
+#pageWrapper
+{
+	font-size: 80%;	/* set your default font size here. */
+}
+#masthead
+{
+	background-color: #fff;
+	color: #333;
+}
+
+#outerColumnContainer
+{
+	border-left-color: #ded;
+	border-right-color: #EAEBE6;
+	background-color: #fff;
+}
+
+#rightColumn .inside
+{
+	/* if you apply a font size to just #rightColumn, then its width,
+	 * which is specified in EMs, will also be affected. you don't want
+	 * that. so apply font size changes to the .inside element which exists
+	 * inside underneath all three columns
+	 */
+	font-size: 90%;
+}
+#rightColumn .inside
+{
+	font-size: 110%;
+}
+
+#footer
+{
+	background-color: #4B5141;
+	color: #5B7B2C;
+	text-align: center;
+	font-size: 60%;
+}
+
+#footer a
+{
+	color: #5B7B2C;
+}
+
+.sinside
+{
+	margin: 0 1px 0 1px;
+}
+
+		#masthead		
+		{
+			height: 120px;
+			background-image: url(bghead.png);
+			background-repeat: no-repeat;
+		}
+		#contentshadow		
+		{
+			height: 10px;
+			width: 100%;
+			background-image: url(topheadb.png);
+			z-index: 0;
+		}
+		#menushadow		
+		{
+			height: 10px;
+			width: 100%;
+			background-image: url(shadowr.png);
+			background-repeat: repeat-x;
+			z-index: 0;
+		}
+
+			
+
+/******************************************************************************/
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+}
+h1 {
+  font-size: 1.3em;
+}
+h2 {
+  font-size: 1.2em;
+}
+h3, h4, h5, h6 {
+  font-size: 1.1em;
+}
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.9em;
+}
+a, a:link, a:visited {
+  text-decoration: none;
+  font-weight: bold;
+  color: #4B5141;
+}
+a:hover
+{
+  color: #5B7B2C;
+  text-decoration: underline;
+}
+fieldset {
+  border: 1px solid #ccc;
+}
+pre, .messages {
+  background-color: #EAEBE6;
+  padding: 0.3em;
+  margin-bottom: 1em;
+  border: 1px solid #C7CBBC;
+}
+.form-item label {
+  font-size: 1em;
+  color: #333;
+}
+.item-list .title {
+  font-size: 1em;
+  color: #333;
+}
+.links {
+  margin-bottom: 0em;
+}
+.comment .links {
+  margin-bottom: 0em;
+}
+
+/*
+** Page layout blocks / IDs
+*/
+#header, #content {
+  width: 100%;
+}
+#logo {
+  vertical-align: middle;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+#logo img {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+#menu {
+  padding: 0.5em 0.5em 0 0.5em;
+  text-align: right;
+  vertical-align: middle;
+}
+
+#search .form-text, #search .form-submit {
+  border: 1px solid #369;
+  font-size: 1.1em;
+}
+#search .form-text {
+  width: 8em;
+  height: 1.4em;
+  padding: 0 0.5em 0 0.5em;
+  margin: 0 0 0.5em 0;
+}
+#search .form-submit {
+  height: 1.5em;
+}
+
+#mission, .node .content, .comment .content {
+  line-height: 1.4;
+}
+#help {
+  font-size: 0.9em;
+  margin-bottom: 1em;
+}
+
+.breadcrumb {
+  margin-bottom: .5em;
+}
+
+.error {
+  border-color: red;
+}
+
+.submitted {
+  color: #999;
+  font-size: 0.8em;
+}
+
+.block, .box {
+  padding: 0 0 1.5em 0;
+}
+.block
+{
+	border-bottom: #C7CBBC;
+	padding-bottom: 0.75em;
+	margin-bottom: 1.5em;
+	border-width: 0 0 1px 0;
+	border-style: none none solid none;
+}
+.block .title {
+  margin-bottom: .25em;
+}
+.box .title {
+  font-size: 1.1em;
+}
+
+.node {
+  margin: .5em 0 2em 0;
+}
+.sticky
+{
+	padding: .5em;
+	background-color: #EAEBE6;
+	border-color: #C7CBBC;
+	border-width: 1px;
+	border-style: solid;
+}
+.node .content, .comment .content {
+  margin: .5em 0 .5em 0;
+}
+.node .taxonomy {
+  color: #999;
+  font-size: 0.8em;
+  padding: 1.5em;
+}
+.node .picture
+{
+	float: right;
+	margin: 0.5em;
+	border-color: #C7CBBC;
+	border-width: 1px;
+	border-style: solid;
+}
+.comment
+{
+	padding: .5em;
+	margin-bottom: 1em;
+	border-color: #C7CBBC;
+	border-width: 1px;
+	border-style: solid;
+}
+.comment .title a {
+  font-size: 1.1em;
+  font-weight: normal;
+}
+.comment .new {
+  text-align: right;
+  font-weight: bold;
+  font-size: 0.8em;
+  float: right;
+  color: red;
+}
+.comment .picture
+{
+	float: right;
+	margin: 0.5em;
+	border-color: #C7CBBC;
+	border-width: 1px;
+	border-style: solid;
+}
