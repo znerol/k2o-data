@@ -1,4 +1,4 @@
-#N canvas 60 46 913 583 10;
+#N canvas 66 69 913 583 10;
 #X obj 105 40 inlet;
 #X obj 508 52 inlet;
 #X obj 527 144 s \$0-fadedur;
@@ -19,7 +19,7 @@
 #X text 425 568 toggle audio for this window;
 #X obj 105 65 t a b;
 #X msg 410 80 1;
-#N canvas 0 116 985 485 voice 1;
+#N canvas 6 116 985 485 voice 1;
 #X obj 458 281 *~;
 #X obj 519 280 *~;
 #X obj 658 131 line~;
@@ -67,8 +67,8 @@
 #X obj 452 -62 inlet;
 #X obj 337 -61 r lsp;
 #X obj 103 115 inlet~;
-#X obj 402 -10 vbap;
-#X obj 400 -37 pack f f;
+#X obj 402 -10 vbap 0 0 0;
+#X obj 400 -37 t b f;
 #X connect 0 0 31 0;
 #X connect 1 0 32 0;
 #X connect 2 0 1 1;
@@ -117,7 +117,8 @@
 #X connect 41 7 3 0;
 #X connect 42 0 36 0;
 #X connect 43 0 48 0;
-#X connect 44 0 48 1;
+#X connect 44 0 47 3;
+#X connect 45 0 47 0;
 #X connect 46 0 19 0;
 #X connect 46 0 20 0;
 #X connect 46 0 13 0;
@@ -128,6 +129,7 @@
 #X connect 46 0 1 0;
 #X connect 47 0 41 0;
 #X connect 48 0 47 0;
+#X connect 48 1 47 1;
 #X restore 120 464 pd voice mixer;
 #X text 185 446 turn mixer on/off;
 #X msg 527 124 20;
