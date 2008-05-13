@@ -1,23 +1,23 @@
---- Pd-0.39.3-extended.lo/externals/Makefile	2008-05-13 11:15:07.000000000 +0200
-+++ Pd-0.39.3-extended.orig/externals/Makefile	2007-07-24 00:46:32.000000000 +0200
-@@ -1671,11 +1669,11 @@
+--- Pd-0.39.3-extended.orig/externals/Makefile	2008-05-13 11:15:07.000000000 +0200
++++ Pd-0.39.3-extended.lo/externals/Makefile	2007-07-24 00:46:32.000000000 +0200
+@@ +1669,11 -1671,11 @@
  	cd $(externals_src)/OSCx && autoconf
  
  $(externals_src)/OSCx/Makefile: $(externals_src)/OSCx/Makefile.in
--	cd $(externals_src)/OSCx && ./configure CFLAGS=-fPIC
-+	cd $(externals_src)/OSCx && ./configure
+-	cd $(externals_src)/OSCx && ./configure
++	cd $(externals_src)/OSCx && ./configure CFLAGS=-fPIC
  $(externals_src)/OSCx/libOSC/Makefile: $(externals_src)/OSCx/libOSC/Makefile.in
--	cd $(externals_src)/OSCx && ./configure CFLAGS=-fPIC
-+	cd $(externals_src)/OSCx && ./configure
+-	cd $(externals_src)/OSCx && ./configure
++	cd $(externals_src)/OSCx && ./configure CFLAGS=-fPIC
  $(externals_src)/OSCx/src/Makefile: $(externals_src)/OSCx/src/Makefile.in
--	cd $(externals_src)/OSCx && ./configure CFLAGS=-fPIC
-+	cd $(externals_src)/OSCx && ./configure
+-	cd $(externals_src)/OSCx && ./configure
++	cd $(externals_src)/OSCx && ./configure CFLAGS=-fPIC
  
  $(externals_src)/OSCx/src/OSCroute.$(EXTENSION):  $(externals_src)/OSCx/configure \
  $(externals_src)/OSCx/Makefile
 diff -ur Pd-0.39.3-extended/packages/Makefile Pd-0.39.3-extended.lo/packages/Makefile
---- Pd-0.39.3-extended/packages/Makefile	2007-08-05 17:33:31.000000000 +0200
-+++ Pd-0.39.3-extended.lo/packages/Makefile	2008-04-28 16:12:00.000000000 +0200
+--- Pd-0.39.3-extended/packages/Makefile.buildlayout	2007-08-05 17:33:31.000000000 +0200
++++ Pd-0.39.3-extended.lo/packages/Makefile.buildlayout	2008-04-28 16:12:00.000000000 +0200
 @@ -61,7 +61,7 @@
  #==============================================================================#
  

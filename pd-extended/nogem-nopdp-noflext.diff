@@ -1,17 +1,17 @@
---- Pd-0.39.3-extended.lo/externals/Makefile	2008-05-13 11:15:07.000000000 +0200
 +++ Pd-0.39.3-extended.orig/externals/Makefile	2007-07-24 00:46:32.000000000 +0200
-@@ -131,12 +131,10 @@
+--- Pd-0.39.3-extended.lo/externals/Makefile	2008-05-13 11:15:07.000000000 +0200
+@@ -131,10 +131,12 @@
    LIB_TARGETS += hidin
  else
    ifeq ($(OS_NAME),darwin)
--    # LIB_TARGETS += hid pdp pidip gem2pdp
--    LIB_TARGETS += hid
-+    LIB_TARGETS += hid pdp pidip gem2pdp
+-    LIB_TARGETS += hid pdp pidip gem2pdp
++    # LIB_TARGETS += hid pdp pidip gem2pdp
++    LIB_TARGETS += hid
    else
      # GNU/Linux, BSD, IRIX, etc.
--    # LIB_TARGETS += hid pdp pidip gem2pdp
--    LIB_TARGETS += hid
-+    LIB_TARGETS += hid pdp pidip gem2pdp
+-    LIB_TARGETS += hid pdp pidip gem2pdp
++    # LIB_TARGETS += hid pdp pidip gem2pdp
++    LIB_TARGETS += hid
    endif
  endif
  
