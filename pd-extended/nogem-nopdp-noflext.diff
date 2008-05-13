@@ -1,0 +1,45 @@
+--- Pd-0.39.3-extended.lo/externals/Makefile	2008-05-13 11:15:07.000000000 +0200
++++ Pd-0.39.3-extended.orig/externals/Makefile	2007-07-24 00:46:32.000000000 +0200
+@@ -131,12 +131,10 @@
+   LIB_TARGETS += hidin
+ else
+   ifeq ($(OS_NAME),darwin)
+-    # LIB_TARGETS += hid pdp pidip gem2pdp
+-    LIB_TARGETS += hid
++    LIB_TARGETS += hid pdp pidip gem2pdp
+   else
+     # GNU/Linux, BSD, IRIX, etc.
+-    # LIB_TARGETS += hid pdp pidip gem2pdp
+-    LIB_TARGETS += hid
++    LIB_TARGETS += hid pdp pidip gem2pdp
+   endif
+ endif
+ 
+diff -ur Pd-0.39.3-extended/packages/Makefile Pd-0.39.3-extended.lo/packages/Makefile
+--- Pd-0.39.3-extended/packages/Makefile	2007-08-05 17:33:31.000000000 +0200
++++ Pd-0.39.3-extended.lo/packages/Makefile	2008-04-28 16:12:00.000000000 +0200
+@@ -15,7 +15,8 @@
+ 
+ 
+ ## default target
+-all: pd abstractions doc gem externals flext
++#all: pd abstractions doc gem externals flext
++all: pd abstractions doc externals
+ #all: pd++
+ 	@echo "Complete build succeeded!"
+ 
+@@ -283,8 +284,12 @@
+ #==============================================================================#
+ 
+ # this is used for installing into a pre-build Pd binary
++# extended_install: abstractions_install doc_install extensions_install \
++# gem_install externals_install flext_install readme_install welcome_install \
++# license_install noncvs_install
++
+ extended_install: abstractions_install doc_install extensions_install \
+-gem_install externals_install flext_install readme_install welcome_install \
++            externals_install               readme_install welcome_install \
+ license_install noncvs_install
+ 
+ 
+

@@ -1,0 +1,19 @@
+diff -ur Pd-0.39.3-extended/externals/grh/PDContainer/makefile Pd-0.39.3-extended.lo/externals/grh/PDContainer/makefile
+--- Pd-0.39.3-extended/externals/grh/PDContainer/makefile	2005-10-21 13:56:32.000000000 +0200
++++ Pd-0.39.3-extended.lo/externals/grh/PDContainer/makefile	2008-04-28 17:13:15.000000000 +0200
+@@ -1,5 +1,5 @@
+-PD-PATH=/usr/lib/pd
+-PD-SCR=/home/holzi/pd-0.39-0test7
++PD-PATH=/usr/local/lib/pd
++PD-SCR=/usr/local/src/Pd-0.39.3-extended/pd
+ 
+ 
+ CC = g++
+@@ -116,5 +116,5 @@
+ 	
+ 
+ install:
+-	cp -f $(TARGET) $(PD-PATH)/externs
++	cp -f $(TARGET) $(PD-PATH)/extra
+ 	cp -f help/*.pd $(PD-PATH)/doc/5.reference
+

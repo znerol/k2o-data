@@ -1,0 +1,13 @@
+diff -ur Pd-0.39.3-extended/externals/OSCx/configure.ac Pd-0.39.3-extended.lo/externals/OSCx/configure.ac
+--- Pd-0.39.3-extended/externals/OSCx/configure.ac	2006-03-14 00:02:44.000000000 +0100
++++ Pd-0.39.3-extended.lo/externals/OSCx/configure.ac	2008-04-28 17:05:08.000000000 +0200
+@@ -95,7 +95,7 @@
+ 					 LDFLAGS="-Wl,-export_dynamic -shared"
+ 					 INCLUDES="$INCLUDES"
+ 					 pd_suffix=pd_linux
+-					 LIBS="-L../../../pd/bin -lpd -lc -lm"
++					 LIBS="-L../../../pd/bin -lc -lm"
+ 					 ;;
+         sparc-sun-*)
+ 		          echo "YOU HAVE A SPARC STATION,	not setting any flags, not supported yet"
+
